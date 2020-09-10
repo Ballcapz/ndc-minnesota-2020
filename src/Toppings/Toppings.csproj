@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Protobuf Include="Protos\toppings.proto" GrpcServices="Server" ProtoRoot="Protos" />
+    <Protobuf Include="Protos\decimal.proto" GrpcServices="None" ProtoRoot="Protos" />
   </ItemGroup>
 
   <ItemGroup>

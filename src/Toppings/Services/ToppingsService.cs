@@ -34,7 +34,7 @@ namespace Toppings
                 {
                     Id = entity.Id,
                     Name = entity.Name,
-                    Price = decimal.ToSingle(entity.Price)
+                    Price = entity.Price
                 };
 
                 var availableTopping = new AvailableTopping

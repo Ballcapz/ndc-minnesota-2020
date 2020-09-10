@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <Protobuf Include="Protos/toppings.proto" Services="Client" />
+    <Protobuf Include="Protos/decimal.proto" Services="None" />
   </ItemGroup>
 
   <ItemGroup>

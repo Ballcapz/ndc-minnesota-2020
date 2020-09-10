@@ -15,7 +15,7 @@ namespace Toppings.Tests
         }
 
         [Fact]
-        public async Task Test1()
+        public async Task GetList()
         {
             var client = _factory.CreateToppingsClient();
 
