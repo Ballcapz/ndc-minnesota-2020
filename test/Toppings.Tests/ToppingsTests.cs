@@ -22,7 +22,7 @@ namespace Toppings.Tests
             // this is how we actually interact in our app
             var response = await client.GetAvailableAsync(new AvailableRequest());
 
-            Assert.NotEmpty(response.Toppings);
+            Assert.Equal(2, response.Toppings.Count);
         }
     }
 }
