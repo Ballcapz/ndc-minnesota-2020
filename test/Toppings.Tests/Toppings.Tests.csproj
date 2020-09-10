@@ -17,4 +17,12 @@
     <PackageReference Include="coverlet.collector" Version="1.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Protobuf Include="Protos/toppings.proto" Services="Client" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Toppings\Toppings.csproj" />
+  </ItemGroup>
+
 </Project>
