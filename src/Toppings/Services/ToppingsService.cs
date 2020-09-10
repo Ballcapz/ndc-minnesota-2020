@@ -50,5 +50,16 @@ namespace Toppings
             return response;
         }
 
+        public override async Task<DecrementStockResponse> DecrementStock(DecrementStockRequest request, ServerCallContext context)
+        {
+            // this does not have excption handling rn
+            foreach (var id in request.ToppingIds)
+            {
+                await _data.DecrementStockAsync(id);
+            }
+
+            return new DecrementStockResponse();
+        }
+
     }
 }

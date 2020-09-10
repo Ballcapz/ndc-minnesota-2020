@@ -31,6 +31,13 @@ namespace Frontend
                 var config = provider.GetRequiredService<IConfiguration>();
                 options.Address = config.GetServiceUri("Toppings", "https");
             });
+
+            services.AddGrpcClient<Orders.OrdersClient>((provider, options) =>
+            {
+                var config = provider.GetRequiredService<IConfiguration>();
+                options.Address = config.GetServiceUri("Orders", "https");
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

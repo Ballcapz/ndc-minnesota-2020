@@ -13,3 +13,5 @@ services:
       port: 5001
 - name: toppings
   project: src/Toppings/Toppings.csproj
+- name: orders
+  project: src/Orders/Orders.csproj

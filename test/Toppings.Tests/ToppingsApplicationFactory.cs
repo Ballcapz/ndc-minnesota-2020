@@ -15,6 +15,9 @@ namespace Toppings.Tests
 {
     public class ToppingsApplicationFactory : WebApplicationFactory<Startup>
     {
+        public IToppingData MockToppingData { get; set; }
+
+
         public Toppings.ToppingsClient CreateToppingsClient()
         {
             // configured to talk to in memory instance
@@ -37,18 +40,13 @@ namespace Toppings.Tests
                 // unregister the IToppingData from the og startup
                 services.Remove<IToppingData>();
 
-                var list = new List<ToppingEntity>
-                {
-                    new ToppingEntity("cheese", "Cheese", 0.5m, 1),
-                    new ToppingEntity("tomato", "Tomato", 0.5m, 1),
-                };
+                services.AddSingleton(MockToppingData);
+                // // use nsubstitute to resolve IToppingData
+                // var sub = Substitute.For<IToppingData>();
+                // sub.GetAsync().Returns(list);
 
-                // use nsubstitute to resolve IToppingData
-                var sub = Substitute.For<IToppingData>();
-                sub.GetAsync().Returns(list);
-
-                // add substitution to service collection
-                services.AddSingleton(sub);
+                // // add substitution to service collection
+                // services.AddSingleton(sub);
             });
         }
 
