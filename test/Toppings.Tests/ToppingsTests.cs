@@ -31,12 +31,9 @@ namespace Toppings.Tests
             sub.GetAsync().Returns(list);
             _factory.MockToppingData = sub;
 
-
             var client = _factory.CreateToppingsClient();
 
-            // this is how we actually interact in our app
             var response = await client.GetAvailableAsync(new AvailableRequest());
-
             Assert.Equal(2, response.Toppings.Count);
         }
 
